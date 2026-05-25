@@ -198,7 +198,7 @@ function Nav() {
         </nav>
         <div className="nav-cta">
           <a className="btn btn-ghost" href="https://app.quilie.life" target="_blank" rel="noopener noreferrer">Open Web App</a>
-          <a className="btn btn-primary" href="sha256:8b511e779f213eb9a4396a8ff6a1db79c67e4b48254e3fbe4060515e14fc0382">
+          <a className="btn btn-primary" href="https://github.com/TAMPKD/QuiLie/releases/download/v1.0.0/QuiLieV1.apk">
             Download APK
             <Arrow />
           </a>
@@ -230,7 +230,7 @@ function Hero() {
             quieter version of you.
           </p>
           <div className="hero-ctas reveal in" style={{ '--d': '0.28s' }}>
-            <a className="btn btn-primary btn-lg" href="sha256:8b511e779f213eb9a4396a8ff6a1db79c67e4b48254e3fbe4060515e14fc0382">
+            <a className="btn btn-primary btn-lg" href="https://github.com/TAMPKD/QuiLie/releases/download/v1.0.0/QuiLieV1.apk">
               <DroidIcon size={16} />
               Download APK
               <span className="meta">v1.0 · ~150 MB</span>
@@ -1139,7 +1139,7 @@ function DownloadSection() {
             </div>
             <a
               className="dl-btn"
-              href="sha256:8b511e779f213eb9a4396a8ff6a1db79c67e4b48254e3fbe4060515e14fc0382"
+              href="https://github.com/TAMPKD/QuiLie/releases/download/v1.0.0/QuiLieV1.apk"
             >
               <span>Download APK</span>
               <span className="arrow"><Arrow /></span>

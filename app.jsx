@@ -233,7 +233,7 @@ function Hero() {
             <a className="btn btn-primary btn-lg" href="uploads/QuiLieV1.apk" download="QuiLieV1.apk">
               <DroidIcon size={16} />
               Download APK
-              <span className="meta">v1.0 · ~312 MB</span>
+              <span className="meta">v1.0 · ~150 MB</span>
             </a>
             <a className="btn btn-ghost btn-lg" href="https://app.quilie.life" target="_blank" rel="noopener noreferrer">
               <AppleIcon size={16} />
@@ -1133,7 +1133,7 @@ function DownloadSection() {
               Sideload the latest build directly. No Play Store. Updates ship through the app.
             </p>
             <div className="specs">
-              <span>~312 MB</span>
+              <span>~150 MB</span>
               <span>Android 9+</span>
               <span>Signed</span>
             </div>

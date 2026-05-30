@@ -221,13 +221,13 @@ function Hero() {
         <div className="hero-copy">
           <div className="eyebrow purple reveal in"><span className="dot"></span>An emotional authenticity app</div>
           <h1 className="hero-title reveal in" style={{ '--d': '0.05s' }}>
-            <span className="line">Stop lying.</span>
-            <span className="line live">Start living.</span>
+            <span className="line">Drop the mask.</span>
+            <span className="line live">Become who you really are.</span>
           </h1>
           <p className="hero-sub reveal in" style={{ '--d': '0.18s' }}>
             QuiLie is a calm, private space to notice the masks you wear —
-            and shed them, one honest day at a time. Two minutes a day. One
-            quieter version of you.
+            and shed them, a little more yourself each day. Two minutes a day. One
+            truer version of you.
           </p>
           <div className="hero-ctas reveal in" style={{ '--d': '0.28s' }}>
             <a className="btn btn-primary btn-lg" href="https://github.com/TAMPKD/QuiLie/releases/download/v1.0.0/QuiLieV1.apk">
@@ -285,7 +285,7 @@ const STORY_STEPS = [
     eyebrow: 'Step 02 · Reflect',
     title: 'One calm sentence back. Never a lecture.',
     body: 'Your AI coach reads what you logged and reflects one quiet observation. Pick a tone — gentle, direct, or a little dry. It feels like a mirror you can trust, not a tracker.',
-    quote: '"What would honesty have sounded like, if it were safe to say?"',
+    quote: '"What would the real you have sounded like, if it were safe to say?"',
     cite: 'From your coach',
     img: 'reflect',
     tint: 'oklch(0.93 0.04 165)',
@@ -294,7 +294,7 @@ const STORY_STEPS = [
     key: 'grow',
     eyebrow: 'Step 03 · Grow',
     title: 'Visible proof that you\'re becoming yourself.',
-    body: 'Every honest log brightens your mask, extends your streak, and grows the sapling on your Growth screen. The transformation isn\'t abstract — you can watch it.',
+    body: 'Every real moment you log brightens your mask, extends your streak, and grows the sapling on your Growth screen. The transformation isn\'t abstract — you can watch it.',
     quote: '"You\'ve grown 1% more authentic in 1 day."',
     cite: 'Day 21 · Level 2 · Aware',
     img: 'assets/screen-growth.jpg',
@@ -540,7 +540,7 @@ function NoticeProp() {
         <div className="prop-tags" style={{ marginTop: 12 }}>
           <span className="prop-tag on">people-pleasing</span>
           <span className="prop-tag">avoiding conflict</span>
-          <span className="prop-tag">small lie</span>
+          <span className="prop-tag">wore a mask</span>
           <span className="prop-tag">+ add</span>
         </div>
       </div>
@@ -552,7 +552,7 @@ function NoticeProp() {
 const COACH_TONES = [
   {
     key: 'gentle', label: 'Gentle',
-    jsx: <React.Fragment>What would <em>honesty</em> have sounded like, if it were safe to say?</React.Fragment>,
+    jsx: <React.Fragment>What would <em>the real you</em> have sounded like, if it were safe to say?</React.Fragment>,
   },
   {
     key: 'direct', label: 'Direct',
@@ -727,7 +727,7 @@ function GrowProp() {
       </div>
 
       <div className="gw-streak">
-        <div className="l">Week of honesty</div>
+        <div className="l">Week unmasked</div>
         <div className="cells">
           {Array.from({ length: 7 }).map((_, i) => (
             <div key={i} className={`cell ${i < 6 ? 'on' : ''} ${i === 5 ? 'today' : ''}`}>
@@ -784,7 +784,7 @@ function PhoneScreen({ step, active }) {
           A small <em style={{
             fontFamily: 'var(--serif)', fontStyle: 'italic', fontWeight: 400,
             color: 'var(--purple)',
-          }}>honest</em> thing.
+          }}>real</em> thing.
         </div>
       </div>
 
@@ -992,9 +992,9 @@ function MasksSection() {
 const TREES = [
   { key: 'hidden',  num: '01', name: 'Hidden',  img: 'assets/trees/tree-1-hidden.png',  desc: 'A single shoot, half‑buried. Day one. You’ve named the mask — nothing more yet, and nothing less.' },
   { key: 'aware',   num: '02', name: 'Aware',   img: 'assets/trees/tree-2-aware.png',   desc: 'Leaves. Real ones. You can feel the moment of the mask before you put it on. That’s the whole game.' },
-  { key: 'open',    num: '03', name: 'Open',    img: 'assets/trees/tree-3-open.png',    desc: 'The trunk has shape now. A few honest sentences have been said out loud, in actual rooms. The body remembers.' },
+  { key: 'open',    num: '03', name: 'Open',    img: 'assets/trees/tree-3-open.png',    desc: 'The trunk has shape now. A few real sentences have been said out loud, in actual rooms. The body remembers.' },
   { key: 'genuine', num: '04', name: 'Genuine', img: 'assets/trees/tree-4-genuine.png', desc: 'A full canopy. You’re catching the mask before it lands. People notice you “seem different,” and they’re right.' },
-  { key: 'honest',  num: '05', name: 'Honest',  img: 'assets/trees/tree-5-honest.png',  desc: 'Roots, deep ones. Telling the truth is no longer a brave act. It’s just the default sentence.' },
+  { key: 'honest',  num: '05', name: 'Honest',  img: 'assets/trees/tree-5-honest.png',  desc: 'Roots, deep ones. Being your real self is no longer a brave act. It’s just the default sentence.' },
   { key: 'free',    num: '06', name: 'Free',    img: 'assets/trees/tree-6-free.png',    desc: 'The mask is something you used to wear. You can still see it on a shelf — and you don’t reach for it.' },
   { key: 'true',    num: '07', name: 'True',    img: 'assets/trees/tree-7-true.png',    desc: 'You. Whole. Old‑growth. Other people meet you and know exactly who they met.' },
 ];
@@ -1091,13 +1091,13 @@ function PillarsSection() {
           <div className="pillar p2">
             <div className="glyph"><LeafIcon size={20} /></div>
             <h4>Growth you can actually see.</h4>
-            <p>Your mask brightens, your sapling grows, your level path lights up — every honest day.</p>
+            <p>Your mask brightens, your sapling grows, your level path lights up — every day you show up as you.</p>
             <div className="tag">Growth tab</div>
           </div>
           <div className="pillar p3">
             <div className="glyph"><SparkIcon size={20} /></div>
             <h4>A private journal of your truth.</h4>
-            <p>Every log lands in a searchable journal. Tag entries honest or mask — patterns surface themselves.</p>
+            <p>Every log lands in a searchable journal. Tag entries real or mask — patterns surface themselves.</p>
             <div className="tag">Journal &amp; Insights</div>
           </div>
         </div>
@@ -1113,7 +1113,7 @@ function DownloadSection() {
       <div className="container">
         <div className="eyebrow purple dl-eyebrow reveal"><span className="dot"></span>Get on Android or open in any browser</div>
         <h2 className="dl-title reveal" style={{ '--d': '0.05s' }}>
-          Get QuiLie. <em>Get honest.</em>
+          Get QuiLie. <em>Get real.</em>
         </h2>
         <p className="dl-sub reveal" style={{ '--d': '0.15s' }}>
           Android users get the direct APK — no Play Store needed.
@@ -1324,7 +1324,7 @@ function Footer() {
         </div>
         <div className="foot-bottom">
           <span>© 2026 QUILIE · ALL RIGHTS RESERVED</span>
-          <span className="tag">Stop lying. Start living.</span>
+          <span className="tag">Drop the mask. Become who you really are.</span>
           <span>HELLO@QUILIE.LIFE</span>
         </div>
       </div>

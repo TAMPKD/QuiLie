@@ -190,7 +190,7 @@ hello@quilie.life`,
         heading: "Features & Using the App",
         items: [
           ["What are XP, levels, and streaks?", "You earn XP for reflecting, journaling, completing challenges, and logging truth moments. XP raises your level; daily activity builds a streak. They track consistency — not your worth."],
-          ["What is a \"truth moment\"?", "A moment you chose honesty over your mask — admitting a mistake, sharing a real feeling, setting a boundary. Logged truth moments are worth the most XP."],
+          ["What is a \"truth moment\"?", "A moment you chose your real self over your mask — admitting a mistake, sharing a real feeling, setting a boundary. Logged truth moments are worth the most XP."],
           ["My streak reset — why?", "Streaks are based on your local day. If a full day passes with no activity, the streak resets to 1 on your next action."],
           ["Are the AI insights always accurate?", "No. AI output can be incomplete or wrong. Treat insights as prompts for reflection, not facts or professional advice."],
         ],

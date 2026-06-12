@@ -344,7 +344,14 @@ section { position: relative; scroll-margin-top: 80px; }
   .hero { padding: 110px 0 40px; }
 }
 
-.hero-copy .eyebrow { margin-bottom: 32px; }
+.hero-copy .eyebrow { margin-bottom: 14px; }
+.hero-whatis {
+  font-size: 15.5px;
+  line-height: 1.65;
+  color: var(--ink-2);
+  max-width: 520px;
+  margin: 0 0 30px;
+}
 .hero-title {
   font-family: var(--sans);
   font-size: clamp(48px, 7vw, 88px);

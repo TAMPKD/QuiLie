@@ -220,6 +220,10 @@ function Hero() {
       <div className="container hero-inner">
         <div className="hero-copy">
           <div className="eyebrow purple reveal in"><span className="dot"></span>An emotional authenticity app</div>
+          <p className="hero-whatis reveal in" style={{ '--d': '0.03s' }}>
+            A private journal with an AI coach — log the moments you hide what
+            you really feel, reflect on why, and watch the real you take shape.
+          </p>
           <h1 className="hero-title reveal in" style={{ '--d': '0.05s' }}>
             <span className="line">Drop the mask.</span>
             <span className="line live">Become who you really are.</span>

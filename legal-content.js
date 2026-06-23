@@ -24,7 +24,7 @@ AI PROCESSING
 Reflection content may be sent to our AI provider (Google Gemini) to generate insights. It is processed to return your result and is not used by us to build advertising profiles.
 
 THIRD‑PARTY SERVICES
-We use: Google (sign‑in), Google Gemini (AI), Razorpay and Paddle (payments), OneSignal (push notifications), Firebase (app distribution/analytics), and our hosting providers (Railway, Vercel). Each processes data under its own policy.
+We use: Google (sign‑in), Google Gemini (AI), Razorpay and Dodo Payments (payments), OneSignal (push notifications), Firebase (app distribution/analytics), and our hosting providers (Railway, Vercel). Each processes data under its own policy.
 
 DATA SHARING
 We do not sell your personal data. We share data only with the service providers above as needed to run the App, or where required by law.
@@ -75,7 +75,7 @@ FREE TRIAL & SUBSCRIPTIONS
 • Prices and plans are shown in the App and may vary by region.
 
 PAYMENTS
-Payments are processed by our payment partners (Razorpay for India, Paddle for other regions). We do not store your full card details. By subscribing you authorize the applicable partner to charge your chosen payment method.
+Payments are processed by our payment partners (Razorpay for India, Dodo Payments for other regions). We do not store your full card details. By subscribing you authorize the applicable partner to charge your chosen payment method.
 
 ACCEPTABLE USE
 You agree not to: misuse or abuse the App; attempt to access it through unauthorized means; reverse‑engineer or copy it; use it to harm others or violate any law. We may suspend or terminate accounts that violate these Terms.
@@ -125,7 +125,7 @@ HOW TO REQUEST
 Email hello@quilie.life from your account email within 48 hours, with your account email and reason. We aim to respond within 5 business days.
 
 PROCESSING
-Approved refunds are issued to your original payment method via our payment partner (Razorpay or Paddle). Timing depends on the partner and your bank.
+Approved refunds are issued to your original payment method via our payment partner (Razorpay or Dodo payments). Timing depends on the partner and your bank.
 
 REGIONAL RIGHTS
 If your local law grants you mandatory refund/withdrawal rights (for example, certain EU/UK consumer rights), those rights still apply where required.
@@ -155,7 +155,7 @@ hello@quilie.life`,
           ["Is there a free trial?", "Yes. Every new user gets a 3‑day free trial with full access. No payment is taken during the trial."],
           ["What happens when the trial ends?", "To keep using paid features, you subscribe to a plan. If you don't subscribe, your access pauses, but your data stays safe."],
           ["What plans are available?", "Weekly, monthly, and yearly. Exact prices are shown in the app and may vary by region."],
-          ["How are payments processed?", "Through Razorpay (India) and Paddle (everywhere else). We do NOT store your full card details."],
+          ["How are payments processed?", "Through Razorpay (India) and Dodo Payments (everywhere else). We do NOT store your full card details."],
           ["Will my subscription renew automatically?", "Yes. You can cancel anytime; access continues until the end of your paid period."],
           ["How do I cancel?", "Settings → Subscription → Cancel. Cancelling stops all future charges."],
         ],

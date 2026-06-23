@@ -23,7 +23,7 @@ Email hello@quilie.life from your account email within 48 hours, with your
 account email and reason. We aim to respond within [5] business days.
 PROCESSING
 Approved refunds are issued to your original payment method via our payment
-partner (Razorpay or Paddle). Timing depends on the partner and your bank.
+partner (Razorpay or Dodo Payments). Timing depends on the partner and your bank.
 REGIONAL RIGHTS
 If your local law grants you mandatory refund/withdrawal rights (for example,
 certain EU/UK consumer rights), those rights still apply where required.

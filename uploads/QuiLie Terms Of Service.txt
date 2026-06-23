@@ -24,7 +24,7 @@ Subscriptions renew automatically until cancelled.
 You may cancel anytime; access continues until the end of the paid period.
 Prices and plans are shown in the App and may vary by region.
 PAYMENTS
-Payments are processed by our payment partners (Razorpay for India, Paddle for
+Payments are processed by our payment partners (Razorpay for India, Dodo Payments for
 other regions). We do not store your full card details. By subscribing you
 authorize the applicable partner to charge your chosen payment method.
 ACCEPTABLE USE

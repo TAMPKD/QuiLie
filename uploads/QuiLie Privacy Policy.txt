@@ -19,7 +19,7 @@ Reflection content may be sent to our AI provider (Google Gemini) to generate
 insights. It is processed to return your result and is not used by us to
 build advertising profiles.
 THIRD-PARTY SERVICES
-We use: Google (sign-in), Google Gemini (AI), Razorpay and Paddle (payments),
+We use: Google (sign-in), Google Gemini (AI), Razorpay and Dodo Payments (payments),
 OneSignal (push notifications), Firebase (app distribution/analytics), and our
 hosting providers (Railway, Vercel). Each processes data under its own policy.
 DATA SHARING

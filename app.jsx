@@ -1,6 +1,7 @@
 // ─────────────────── QuiLie Landing ───────────────────
 // Light, Stripe/Notion-style focused landing.
 
+import { Analytics } from '@vercel/analytics/react';
 const { useState, useEffect, useRef, useMemo } = React;
 
 /* ───── Icons ───── */
@@ -1371,6 +1372,7 @@ function App() {
       </main>
       <Footer />
       <DocModal docKey={docKey} onClose={closeDoc} />
+      <Analytics />
     </DocsCtx.Provider>
   );
 }

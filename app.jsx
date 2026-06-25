@@ -1372,7 +1372,6 @@ function App() {
       </main>
       <Footer />
       <DocModal docKey={docKey} onClose={closeDoc} />
-      <Analytics />
     </DocsCtx.Provider>
   );
 }

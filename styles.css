@@ -2510,3 +2510,28 @@ section { position: relative; scroll-margin-top: 80px; }
   .tree-node .name { font-size: 11px; }
   .tree-path .track::before { left: 28px; right: 28px; }
 }
+
+/* ───── Trial badge ───── */
+.trial-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  padding: 6px 14px 6px 10px;
+  border-radius: 999px;
+  background: oklch(0.995 0.004 85);
+  border: 1px solid var(--line-soft);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  box-shadow: 0 1px 4px oklch(0.2 0.02 285 / 0.05);
+}
+.trial-badge-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--mint);
+  box-shadow: 0 0 0 3px var(--mint-tint);
+  flex-shrink: 0;
+  animation: pulseDot 2.4s ease-out infinite;
+}

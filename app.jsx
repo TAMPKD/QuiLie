@@ -246,6 +246,11 @@ function Hero() {
             </a>
           </div>
 
+          <div className="trial-badge reveal in" style={{ '--d': '0.36s' }}>
+            <span className="trial-badge-dot" />
+            Free 3-day trial — no card needed
+          </div>
+
           <TodayWidget />
         </div>
 

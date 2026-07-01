@@ -195,6 +195,7 @@ function Nav() {
           <a href="#masks">Masks</a>
           <a href="#trees">Levels</a>
           <a href="#download">Download</a>
+           <a href="/tools/social-battery-assessment/">Free Quiz</a>
         </nav>
         <div className="nav-cta">
           <a className="btn btn-ghost" href="https://app.quilie.life" target="_blank" rel="noopener noreferrer">Open Web App</a>
@@ -1317,6 +1318,7 @@ function Footer() {
             <a href="#masks">Masks</a>
             <a href="#trees">Levels</a>
             <a href="#download">Download</a>
+            <a href="/tools/social-battery-assessment/">Free Social Battery Quiz</a>
           </div>
           <div className="foot-col">
             <h5>Support</h5>

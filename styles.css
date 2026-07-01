@@ -2535,3 +2535,280 @@ section { position: relative; scroll-margin-top: 80px; }
   flex-shrink: 0;
   animation: pulseDot 2.4s ease-out infinite;
 }
+
+/* ═══════════════════════════════════════════════════════════
+   Social Battery Assessment — tools/social-battery-assessment
+   Extends existing tokens only. No new colors/fonts/radii defined.
+   ═══════════════════════════════════════════════════════════ */
+
+/* ───── Page shell (no Nav/Footer — needs its own breathing room) ───── */
+.assess-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 56px 24px 80px;
+  position: relative;
+}
+.assess-shell {
+  width: 100%;
+  max-width: 640px;
+}
+
+/* Minimal wordmark — same brand-mark pattern as Nav, but static, no nav-links/CTAs */
+.assess-brand {
+  display: flex; align-items: center; gap: 10px; justify-content: center;
+  margin-bottom: 36px;
+}
+.assess-brand .brand-mark { width: 26px; height: 26px; border-radius: 7px; }
+.assess-brand span:last-child {
+  font-family: var(--sans); font-size: 16px; font-weight: 700;
+  letter-spacing: -0.02em; color: var(--ink-2);
+}
+
+/* ───── Progress bar — reuses the exact .scroll-progress gradient ───── */
+.assess-progress-track {
+  width: 100%;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--line-soft);
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+.assess-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--mint), var(--purple), var(--purple-deep));
+  box-shadow: 0 0 8px oklch(0.55 0.18 295 / 0.5);
+  border-radius: 999px;
+  transition: width .5s cubic-bezier(.2,.7,.2,1);
+}
+.assess-progress-label {
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--ink-3);
+  display: flex; justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+/* ───── Live 3-axis preview strip (the gamification centerpiece) ─────
+   Three thin bars that grow in real time as questions are answered. */
+.assess-axis-preview {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 40px;
+}
+.assess-axis-mini {
+  display: flex; flex-direction: column; gap: 6px;
+}
+.assess-axis-mini .label {
+  font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--ink-3);
+}
+.assess-axis-mini .track {
+  height: 5px; border-radius: 999px; background: var(--line-soft); overflow: hidden;
+}
+.assess-axis-mini .fill {
+  height: 100%; border-radius: 999px;
+  transition: width .6s cubic-bezier(.2,.7,.2,1);
+}
+.assess-axis-mini.somatic .fill { background: var(--purple); }
+.assess-axis-mini.cognitive .fill { background: var(--mint); }
+.assess-axis-mini.recovery .fill { background: oklch(0.6 0.12 60); }
+
+/* ───── Question card — same recipe as .pillar / .dl-card ───── */
+.assess-card {
+  background: var(--bg-card);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--r-lg);
+  padding: 36px 32px;
+  box-shadow: var(--shadow-sm);
+  transition: opacity .35s cubic-bezier(.2,.7,.2,1), transform .35s cubic-bezier(.2,.7,.2,1);
+}
+.assess-card.card-leave {
+  opacity: 0; transform: translateY(-12px);
+}
+.assess-card.card-enter {
+  opacity: 0; transform: translateY(12px);
+}
+.assess-card.card-in {
+  opacity: 1; transform: none;
+}
+
+.assess-axis-tag {
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--purple);
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-bottom: 18px;
+}
+.assess-axis-tag .dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--purple); box-shadow: 0 0 0 4px var(--purple-tint);
+}
+
+.assess-question {
+  font-family: var(--sans); font-size: clamp(20px, 3vw, 26px);
+  font-weight: 700; letter-spacing: -0.02em; line-height: 1.25;
+  color: var(--ink); margin: 0 0 28px;
+}
+
+/* ───── Answer options — same shape language as buttons, full-width ───── */
+.assess-options {
+  display: flex; flex-direction: column; gap: 10px;
+}
+.assess-option {
+  display: flex; align-items: center; gap: 14px;
+  width: 100%; text-align: left;
+  padding: 16px 18px;
+  background: var(--bg);
+  border: 1.5px solid var(--line-soft);
+  border-radius: var(--r);
+  font-family: var(--sans); font-size: 14.5px; font-weight: 500;
+  color: var(--ink-2); line-height: 1.45;
+  cursor: pointer;
+  transition: border-color .2s, background .2s, transform .15s ease, box-shadow .25s ease;
+}
+.assess-option:hover {
+  border-color: var(--purple-soft);
+  background: var(--purple-tint);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+.assess-option:active { transform: translateY(0); }
+.assess-option.selected {
+  border-color: var(--purple);
+  background: var(--purple-tint);
+  color: var(--ink);
+  box-shadow: 0 0 0 3px var(--purple-tint);
+}
+.assess-option .letter {
+  width: 26px; height: 26px; border-radius: 50%;
+  display: grid; place-items: center; flex-shrink: 0;
+  font-family: var(--mono); font-size: 11px; font-weight: 500;
+  background: var(--bg-soft); color: var(--ink-3);
+  transition: background .2s, color .2s;
+}
+.assess-option.selected .letter {
+  background: var(--purple); color: white;
+}
+
+/* ───── Transition / momentum copy between question groups ───── */
+.assess-momentum {
+  text-align: center;
+  font-family: var(--serif); font-style: italic; font-size: 17px;
+  color: var(--purple); letter-spacing: -0.005em;
+  padding: 28px 0;
+}
+
+/* ───── Plot-twist question — visually distinct, doesn't feed score ───── */
+.assess-card.twist {
+  background: var(--ink);
+  border-color: var(--ink);
+}
+.assess-card.twist .assess-axis-tag,
+.assess-card.twist .assess-axis-tag .dot {
+  color: var(--mint); background: var(--mint);
+  box-shadow: 0 0 0 4px oklch(0.66 0.1 165 / 0.18);
+}
+.assess-card.twist .assess-question { color: var(--bg); }
+.assess-card.twist .assess-option {
+  background: oklch(0.22 0.015 285);
+  border-color: oklch(0.3 0.015 285);
+  color: oklch(0.85 0.01 80);
+}
+.assess-card.twist .assess-option:hover {
+  border-color: var(--mint); background: oklch(0.26 0.02 285);
+}
+.assess-card.twist .assess-option.selected {
+  border-color: var(--mint); background: oklch(0.26 0.04 165);
+  color: var(--bg);
+}
+.assess-card.twist .assess-option.selected .letter { background: var(--mint); color: var(--ink); }
+
+/* ───── Result screen ───── */
+.assess-result-head { text-align: center; margin-bottom: 44px; }
+.assess-result-eyebrow {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px;
+}
+.assess-archetype-name {
+  font-family: var(--sans); font-size: clamp(32px, 5vw, 48px);
+  font-weight: 700; letter-spacing: -0.03em; line-height: 1.05;
+  margin: 0 0 18px;
+  background: linear-gradient(120deg, var(--purple), var(--purple-deep));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  opacity: 0; transform: translateY(8px);
+  transition: opacity .6s cubic-bezier(.2,.7,.2,1), transform .6s cubic-bezier(.2,.7,.2,1);
+}
+.assess-archetype-name.in { opacity: 1; transform: none; }
+.assess-archetype-copy {
+  font-size: 16.5px; line-height: 1.65; color: var(--ink-2);
+  max-width: 480px; margin: 0 auto;
+}
+
+/* Axis result rows — reuses the .level-num gradient-serif-numeral recipe */
+.assess-axis-results { display: flex; flex-direction: column; gap: 22px; margin: 40px 0; }
+.assess-axis-row {
+  display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 18px;
+  opacity: 0; transform: translateX(-8px);
+  transition: opacity .5s cubic-bezier(.2,.7,.2,1), transform .5s cubic-bezier(.2,.7,.2,1);
+}
+.assess-axis-row.in { opacity: 1; transform: none; }
+.assess-axis-row .axis-num {
+  font-family: var(--serif); font-style: italic;
+  font-size: 40px; line-height: 1; letter-spacing: -0.02em; font-weight: 400;
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  min-width: 64px;
+}
+.assess-axis-row.somatic .axis-num { background: linear-gradient(135deg, var(--purple), var(--purple-deep)); }
+.assess-axis-row.cognitive .axis-num { background: linear-gradient(135deg, var(--mint), oklch(0.5 0.1 165)); }
+.assess-axis-row.recovery .axis-num { background: linear-gradient(135deg, oklch(0.7 0.12 60), oklch(0.55 0.12 60)); }
+.assess-axis-row .axis-body { display: flex; flex-direction: column; gap: 6px; }
+.assess-axis-row .axis-title {
+  font-family: var(--sans); font-size: 14px; font-weight: 600; color: var(--ink);
+}
+.assess-axis-row .axis-track { height: 6px; border-radius: 999px; background: var(--line-soft); overflow: hidden; }
+.assess-axis-row .axis-fill { height: 100%; border-radius: 999px; transition: width 1s cubic-bezier(.2,.7,.2,1); }
+.assess-axis-row.somatic .axis-fill { background: var(--purple); }
+.assess-axis-row.cognitive .axis-fill { background: var(--mint); }
+.assess-axis-row.recovery .axis-fill { background: oklch(0.6 0.12 60); }
+
+.assess-disclaimer {
+  text-align: center; font-size: 12.5px; color: var(--ink-mute);
+  max-width: 420px; margin: 0 auto 36px; line-height: 1.5;
+}
+
+/* CTA block — reuses .btn-primary / .dl-card primary pattern */
+.assess-cta-card {
+  background: var(--ink); color: var(--bg);
+  border-radius: var(--r-lg); padding: 32px;
+  text-align: center; box-shadow: var(--shadow-lg);
+}
+.assess-cta-card .blind-spot {
+  font-size: 15px; line-height: 1.6; color: oklch(0.78 0.01 80);
+  margin: 0 0 22px; max-width: 440px; margin-inline: auto;
+}
+.assess-cta-card .btn-lg { padding: 14px 26px; font-size: 15px; }
+.assess-cta-card .subtext {
+  margin-top: 14px; font-family: var(--mono); font-size: 10.5px;
+  letter-spacing: 0.08em; color: oklch(0.6 0.01 80);
+}
+
+/* Share card trigger + canvas-generated image preview */
+.assess-share-row {
+  display: flex; gap: 10px; justify-content: center; margin: 28px 0;
+  flex-wrap: wrap;
+}
+.assess-share-preview {
+  margin: 24px auto 0; border-radius: var(--r); overflow: hidden;
+  border: 1px solid var(--line-soft); box-shadow: var(--shadow);
+  max-width: 320px;
+}
+.assess-share-preview canvas { display: block; width: 100%; height: auto; }
+
+@media (max-width: 560px) {
+  .assess-page { padding: 36px 18px 60px; }
+  .assess-card { padding: 28px 22px; }
+  .assess-axis-preview { gap: 10px; }
+  .assess-axis-row { grid-template-columns: auto 1fr; }
+  .assess-axis-row .axis-num { font-size: 32px; min-width: 52px; }
+}

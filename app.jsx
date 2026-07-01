@@ -252,12 +252,11 @@ function Hero() {
             Free 3-day trial — no card needed
           </div>
 
-          <div className="hero-quiz-nudge reveal in" style={{ '--d': '0.35s' }}>
+          <a href="/tools/social-battery-assessment/" className="hero-quiz-nudge reveal in" style={{ '--d': '0.35s' }}>
             <span className="nudge-dot"></span>
-            Not ready to download?&nbsp;
-            <a href="/tools/social-battery-assessment/">Take the free Social Battery Quiz</a>
-            &nbsp;— 2 min, no email.
-          </div>
+            <span>Free Social Battery Quiz — 2 min, no email</span>
+            <span className="nudge-arrow">→</span>
+          </a>
 
           <TodayWidget />
         </div>

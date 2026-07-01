@@ -2914,33 +2914,52 @@ section { position: relative; scroll-margin-top: 80px; }
   padding: 16px 20px;
 }
 
-/* Fix 2: Quiz nudge strip — sits below the two hero CTAs,
-   above TodayWidget. Subtle, on-brand, not a second CTA bar. */
+/* Fix 2: Quiz nudge — single pill matching eyebrow aesthetic.
+   The whole element is a link so there are no inline text wrapping issues. */
 .hero-quiz-nudge {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
-  margin-top: 18px;
+  gap: 9px;
+  margin-top: 20px;
+  padding: 9px 16px;
+  background: var(--purple-tint);
+  border: 1px solid var(--purple-soft);
+  border-radius: 999px;
   font-family: var(--mono);
-  font-size: 11.5px;
-  letter-spacing: 0.04em;
-  color: var(--ink-3);
-}
-.hero-quiz-nudge a {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   color: var(--purple);
-  font-weight: 500;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  text-decoration-color: var(--purple-soft);
-  transition: text-decoration-color .2s, color .2s;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background .2s, border-color .2s, transform .15s ease;
+  align-self: flex-start;        /* don't stretch full width */
 }
-.hero-quiz-nudge a:hover {
-  color: var(--purple-deep);
-  text-decoration-color: var(--purple);
+.hero-quiz-nudge:hover {
+  background: oklch(0.9 0.04 295);
+  border-color: var(--purple);
+  transform: translateY(-1px);
 }
 .hero-quiz-nudge .nudge-dot {
   width: 5px; height: 5px; border-radius: 50%;
   background: var(--purple);
   flex-shrink: 0;
-  box-shadow: 0 0 0 3px var(--purple-tint);
+  box-shadow: 0 0 0 3px oklch(0.75 0.08 295 / 0.3);
+}
+.hero-quiz-nudge .nudge-arrow {
+  font-family: var(--sans);
+  font-size: 13px;
+  letter-spacing: 0;
+  opacity: 0.7;
+  transition: transform .2s ease;
+}
+.hero-quiz-nudge:hover .nudge-arrow {
+  transform: translateX(2px);
+}
+@media (max-width: 560px) {
+  .hero-quiz-nudge {
+    font-size: 10px;
+    padding: 8px 14px;
+    gap: 7px;
+  }
 }

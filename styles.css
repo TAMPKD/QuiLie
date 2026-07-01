@@ -2812,3 +2812,84 @@ section { position: relative; scroll-margin-top: 80px; }
   .assess-axis-row { grid-template-columns: auto 1fr; }
   .assess-axis-row .axis-num { font-size: 32px; min-width: 52px; }
 }
+
+/* ─────────────────────────────────────────────────────────────
+   MOBILE FIX PATCH — append these rules at the very end of
+   assessment-additions.css (after the existing 560px breakpoint)
+   Fixes: question font collapse, card padding crush, canvas scaling
+   ───────────────────────────────────────────────────────────── */
+
+/* Fix 1: vw clamp breaks on narrow screens — switch to px-only clamp */
+.assess-question {
+  font-size: clamp(17px, 5.5vw, 26px);
+}
+
+/* Fix 2: canvas aspect-ratio — height:auto doesn't work on <canvas> in mobile Chrome */
+.assess-share-preview canvas {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  display: block;
+}
+
+/* Fix 3: tighter breakpoint catches more phones (390px, 375px) */
+@media (max-width: 640px) {
+  .assess-page {
+    padding: 28px 16px 56px;
+    align-items: stretch;   /* was center — stretch fills full width on mobile */
+  }
+  .assess-shell {
+    width: 100%;
+    max-width: 100%;        /* remove 640px cap — use full width on mobile */
+  }
+  .assess-card {
+    padding: 24px 18px;     /* was 36px 32px — too much horizontal squeeze */
+    border-radius: 16px;
+  }
+  .assess-option {
+    padding: 14px 14px;     /* was 16px 18px */
+    font-size: 14px;        /* was 14.5px */
+    gap: 12px;              /* was 14px */
+  }
+  .assess-option .letter {
+    width: 24px;
+    height: 24px;
+    font-size: 10px;
+    flex-shrink: 0;
+  }
+  .assess-axis-preview {
+    gap: 8px;
+    margin-bottom: 28px;
+  }
+  .assess-axis-mini .label {
+    font-size: 8.5px;       /* fits 3 columns on 375px */
+  }
+  .assess-progress-label {
+    font-size: 9.5px;
+    margin-bottom: 24px;
+  }
+  .assess-brand {
+    margin-bottom: 24px;
+  }
+  /* Result screen — axis number too large on small screen */
+  .assess-axis-row {
+    grid-template-columns: auto 1fr;
+    gap: 14px;
+  }
+  .assess-axis-row .axis-num {
+    font-size: 28px;
+    min-width: 46px;
+  }
+  .assess-archetype-copy {
+    font-size: 15px;
+  }
+  .assess-cta-card {
+    padding: 24px 18px;
+  }
+  .assess-cta-card .blind-spot {
+    font-size: 14px;
+  }
+  .assess-share-preview {
+    max-width: 100%;        /* was 320px — let it fill on narrow screens */
+  }
+}

@@ -451,18 +451,19 @@ function AssessmentApp() {
     setTimeout(() => {
       setStep(s => s + 1);
       setCardState('card-enter');
-      requestAnimationFrame(() => requestAnimationFrame(() => setCardState('card-in')));
-    }, 280);
+      // setTimeout(16) is reliable cross-browser; double-rAF isn't on Android Chrome
+      setTimeout(() => setCardState('card-in'), 16);
+    }, 200);
   };
 
   const handleSelect = (weight) => {
     setAnswers(prev => ({ ...prev, [currentQuestion.id]: { w: weight } }));
-    setTimeout(advance, 260); // brief pause so the "selected" state is visible
+    setTimeout(advance, 160); // brief flash of "selected" state, then advance
   };
 
   const handleTwistSelect = (statKey) => {
     setTwistAnswer(statKey);
-    setTimeout(advance, 260);
+    setTimeout(advance, 160);
   };
 
   if (isResult) {

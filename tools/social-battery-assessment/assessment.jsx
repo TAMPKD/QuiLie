@@ -137,13 +137,25 @@ function scoreAxis(answers, axisKey) {
 }
 
 function getArchetype(masking) {
-  if (masking <= 35) {
+  // Calibrated thresholds:
+  // All-A answers (w=1 each) = 20% avg  → Unmasked
+  // Mixed A+B                = 27-55%   → Grounded Adapter
+  // All-B answers (w=3 each) = 60% avg  → Quiet Performer (middle of band, not ceiling)
+  // Mixed B+C                = 65-78%   → Quiet Performer top
+  // All-C answers (w=5 each) = 100%     → Vigilant One
+  if (masking <= 27) {
     return {
       key: 'unmasked', name: 'The Unmasked',
       copy: "You're mostly just you, wherever you are. Your work self and your real self aren't running two different scripts — which means you're spending your energy on the day, not on the performance of getting through it. That's rarer than it sounds.",
     };
   }
-  if (masking <= 70) {
+  if (masking <= 55) {
+    return {
+      key: 'grounded-adapter', name: 'The Grounded Adapter',
+      copy: "You adjust without losing yourself. There's a work version of you, but it's a filtered version, not a fabricated one. You feel the difference between a long week and a light one — and you've mostly figured out how to recover. The leak is real, just slow.",
+    };
+  }
+  if (masking <= 78) {
     return {
       key: 'quiet-performer', name: 'The Quiet Performer',
       copy: "You're good at this — maybe too good. From the outside, you look completely fine. From the inside, there's a meter running that nobody else can see, and it doesn't reset just because the meeting ended. The mask isn't heavy enough to break anything yet. It's heavy enough that you'll feel it by Friday.",

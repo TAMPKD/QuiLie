@@ -195,7 +195,7 @@ function Nav() {
           <a href="#masks">Masks</a>
           <a href="#trees">Levels</a>
           <a href="#download">Download</a>
-           <a href="/tools/social-battery-assessment/">Free Quiz</a>
+          <a href="/tools/social-battery-assessment/">Free Quiz</a>
         </nav>
         <div className="nav-cta">
           <a className="btn btn-ghost" href="https://app.quilie.life" target="_blank" rel="noopener noreferrer">Open Web App</a>
@@ -250,6 +250,13 @@ function Hero() {
           <div className="trial-badge reveal in" style={{ '--d': '0.36s' }}>
             <span className="trial-badge-dot" />
             Free 3-day trial — no card needed
+          </div>
+
+          <div className="hero-quiz-nudge reveal in" style={{ '--d': '0.35s' }}>
+            <span className="nudge-dot"></span>
+            Not ready to download?&nbsp;
+            <a href="/tools/social-battery-assessment/">Take the free Social Battery Quiz</a>
+            &nbsp;— 2 min, no email.
           </div>
 
           <TodayWidget />

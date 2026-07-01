@@ -2893,3 +2893,54 @@ section { position: relative; scroll-margin-top: 80px; }
     max-width: 100%;        /* was 320px — let it fill on narrow screens */
   }
 }
+
+/* ─────────────────────────────────────────────────────────────
+   FIX PATCH 2 — append at very end of styles.css
+   (after the mobile-fix.css block you already appended)
+
+   Fixes:
+   1. CTA button overflowing the dark card on mobile
+   2. Quiz entry point visible on mobile hero
+   ───────────────────────────────────────────────────────────── */
+
+/* Fix 1: CTA button overflow — btn has white-space:nowrap globally,
+   override it inside the dark assessment card only */
+.assess-cta-card .btn-purple {
+  white-space: normal;
+  text-align: center;
+  width: 100%;
+  justify-content: center;
+  line-height: 1.3;
+  padding: 16px 20px;
+}
+
+/* Fix 2: Quiz nudge strip — sits below the two hero CTAs,
+   above TodayWidget. Subtle, on-brand, not a second CTA bar. */
+.hero-quiz-nudge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: 0.04em;
+  color: var(--ink-3);
+}
+.hero-quiz-nudge a {
+  color: var(--purple);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--purple-soft);
+  transition: text-decoration-color .2s, color .2s;
+}
+.hero-quiz-nudge a:hover {
+  color: var(--purple-deep);
+  text-decoration-color: var(--purple);
+}
+.hero-quiz-nudge .nudge-dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--purple);
+  flex-shrink: 0;
+  box-shadow: 0 0 0 3px var(--purple-tint);
+}
